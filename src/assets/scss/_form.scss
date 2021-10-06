@@ -1,0 +1,71 @@
+.form {
+  &.form-shadow {
+    @apply bg-white p-8 shadow-3xl rounded-md;
+  }
+  &.is-double {
+    @apply flex flex-wrap justify-between items-start;
+    > .field {
+      width: calc(50% - 15px);
+      flex: 0 0 calc(50% - 15px);
+      @apply mb-4;
+    }
+  }
+  .field {
+    .label {
+      @apply block font-semibold text-lg mb-2;
+    }
+    .input, .select-inner {
+      @apply w-full h-10 px-3 py-2 bg-gray-50 border-2 border-gray-200 rounded outline-none focus:border-primary-300 transition-all duration-400 ease-in-out;
+    }
+    &.is-checkbox {
+      .checkbox {
+        @apply align-middle;
+      }
+      .label {
+        @apply ml-3 mb-0 cursor-pointer inline-block text-base align-middle;
+      }
+    }
+    .radio-group {
+      @apply flex flex-wrap items-center;
+      > .main-label { @apply flex-full block font-semibold text-lg mb-2; }
+      .radio {
+        &:not(:last-child) { @apply mr-3; }
+        .label {
+          @apply mb-0 cursor-pointer inline-block text-base align-middle;
+          &::before {
+            content: "";
+            @apply inline-block w-4 h-4 mt-1 mr-2 border-2 bg-gray-200 rounded-full shadow transition-all duration-300 ease-in-out;
+            
+          }
+          &.is-active::before {
+            @apply border-white border-4 bg-primary-500;
+          }
+        }
+      }
+    }
+    .input-file {
+      @apply w-full cursor-pointer bg-gray-200 border border-gray-300 mb-3 outline-none p-2 rounded shadow-sm  transition-all duration-400 ease-in-out;
+      &:hover {
+        @apply bg-primary-500 text-white;
+      }
+    }
+    &.is-button {
+      @apply mt-4 text-right flex-full;
+    }
+    &:not(:last-child) {
+      @apply mb-4;
+    }
+  }
+}
+
+@screen max-md {
+  .form {
+    &.is-double {
+      .field {
+        flex: 0 0 100%;
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

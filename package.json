@@ -1,0 +1,28 @@
+{
+  "name": "admin-panel",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^1.0.4",
+    "autoprefixer": "^10.3.7",
+    "notyf": "^3.10.0",
+    "postcss": "^8.3.9",
+    "postcss-import": "^14.0.2",
+    "sass": "^1.42.1",
+    "tailwindcss": "^2.2.16",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.2",
+    "@vue/compiler-sfc": "^3.2.19",
+    "path": "^0.12.7",
+    "vite": "^2.6.3",
+    "yarn-upgrade-all": "^0.5.4"
+  }
+}

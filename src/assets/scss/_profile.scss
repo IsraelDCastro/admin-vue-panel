@@ -1,0 +1,28 @@
+.profile-page {
+  @apply flex flex-wrap items-start justify-center;
+  .profile-info {
+    @apply w-full bg-white text-center p-6 shadow-lg rounded-md mb-8;
+    .img-profile {
+      @apply w-44 h-44 mx-auto rounded-full overflow-hidden mb-3;
+    }
+    p {
+      @apply text-gray-400 text-sm mb-8;
+    }
+  }
+  .profile-form { 
+    @apply w-full;
+    > div {
+      @apply bg-white mb-8 p-6 shadow-lg rounded-md;
+    }
+    h4 {
+      @apply mb-4 font-semibold;
+    }
+  }
+}
+
+@screen tablet {
+  .profile-page {
+    .profile-info { @apply w-3/12 mr-5; }
+    .profile-form { @apply w-8/12; }
+  }
+}

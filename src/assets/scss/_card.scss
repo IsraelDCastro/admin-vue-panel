@@ -1,0 +1,11 @@
+.card {
+  @apply bg-white p-8 shadow-sm rounded-md;
+  .card-body {
+    .card-title {
+      @apply font-semibold mb-4;
+    }
+  }
+  .card-foot {
+    @apply border-t border-gray-400 border-opacity-40 mt-4 pt-4 flex flex-wrap justify-between items-center;
+  }
+}

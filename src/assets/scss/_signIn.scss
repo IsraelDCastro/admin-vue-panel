@@ -1,0 +1,28 @@
+.sign-in {
+  @apply h-screen bg-primary-200 p-8 bg-opacity-5 flex items-center justify-center;
+  .sign-wrap {
+    @apply w-full rounded-md shadow-2xl overflow-hidden flex justify-center;
+    .signin-img {
+      @apply hidden relative z-1 rounded-tr-md rounded-br-md bg-gradient-to-tr from-primary-500 to-primary-700 bg-cover bg-center bg-no-repeat;
+      background-image: url("/sign-image.jpg");
+      height: 550px;
+    }
+    .form {
+      @apply bg-white p-8 w-full flex flex-col justify-center;
+    }
+  }
+}
+
+@screen md {
+  .sign-in {
+    .sign-wrap {
+      @apply w-8/12;
+      .signin-img {
+        @apply w-8/12 inline-block;
+      }
+      .form {
+        @apply -ml-4 w-8/12 pl-12 py-8 pr-8;
+      }
+    }
+  }
+}

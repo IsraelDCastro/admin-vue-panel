@@ -1,0 +1,185 @@
+.state {
+  @apply inline-block w-full text-center capitalize text-sm rounded text-white px-4 py-1 bg-gray-500;
+  &.is-paid, &.is-active {
+    @apply bg-green-500;
+  }
+  &.is-inactive {
+    @apply bg-secondary-200;
+  }
+  &.is-pending {
+    @apply bg-gray-500;
+  }
+  &.is-canceled {
+    @apply bg-red-500;
+  }
+  &.is-suspended {
+    @apply border-indigo-500;
+  }
+  &.is-transit {
+    @apply bg-blue-500;
+  }
+  
+}
+
+.filter {
+  @apply mb-5;
+  .form {
+    @apply flex flex-col md:flex-row;
+    .field {
+      @apply mb-0 mr-3;
+      .control {
+        @apply relative overflow-hidden;
+      }
+      .button-search {
+        @apply h-full px-4 absolute right-0 top-0 z-10 bg-primary-500 text-white rounded;
+        &:hover {
+          @apply bg-primary-700;
+        }
+      }
+    } 
+    &.search {
+      @apply flex;
+      .search__clear-link {
+        @apply ml-3 px-2 py-2 text-xl rounded text-red-500 inline-block;
+        &:hover {
+          @apply bg-red-500 text-white;
+        }
+        i {
+          transition: all 0s;
+        }
+      }
+    }
+  }
+}
+
+.table-container {
+  -webkit-overflow-scrolling: touch;
+  @apply max-w-full overflow-auto overflow-y-hidden rounded-md;
+  &.table-shadow {
+    @apply shadow-md;
+  }
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+}
+
+/***** Table *****/
+
+.table {
+  @apply w-full max-w-full overflow-hidden;
+  .table-head {
+    @apply text-left text-lg  bg-primary-700;
+    th {
+      @apply text-white;
+      a {
+        @apply text-white font-body font-bold;
+      }
+      &:not(:last-child) {
+        @apply border-r-2 border-white;
+      }
+    }
+  }
+  tbody {
+    &.table-body {
+      tr {
+        &:nth-child(even) {
+          background-color: rgba(13, 13, 13, 0.05);
+        }
+      }
+      td {
+        &:not(:last-child) {
+          @apply border-r-2 border-primary-700;
+        }
+      }
+    }
+    .action-buttons {
+      .table-icon-btn {
+        @apply text-lg mr-3 transition-all duration-500 ease-in-out;
+        &.edit {
+          @apply text-primary-200;
+          &:hover {
+            @apply text-primary-700;
+          }
+        }
+        &.mail {
+          @apply text-secondary-100;
+          &:hover {
+            @apply text-secondary-200;
+          }
+        }
+        &.add-note {
+          @apply text-tertiary-600;
+          &:hover {
+            @apply text-secondary-300;
+          }
+        }
+        &.trash {
+          @apply text-red-500;
+          &:hover {
+            @apply text-red-600;
+          }
+        }
+      }
+    }
+  }
+  
+  tr {
+    @apply outline-none;
+    .input-check {
+      text-align: center;
+      input {
+        margin: 0;
+      }
+    }
+  }
+  td, th {
+    @apply px-5 py-2 whitespace-nowrap;
+  }
+  &.pending-table {
+    @apply text-left rounded-none shadow-none;
+    thead {
+      tr {
+        @apply border-b border-white;
+      }
+    }
+    tbody {
+      tr {
+        &:not(:last-child) {
+          @apply border-b border-white;
+        }
+      }
+    }
+  }
+  .cell-data--number, .cell-label--number {
+    @apply text-left;
+  }
+}
+
+/***** Table End *****/
+
+@media only screen and (max-width: 989px) {
+  .filter {
+    @apply flex-col mb-6 items-end w-full;
+    .form {
+      @apply w-full;
+      .field {
+        @apply mb-2 w-full;
+      }
+    }
+  }
+}

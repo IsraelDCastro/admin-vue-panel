@@ -1,0 +1,116 @@
+body {
+  @apply font-body bg-gray-100;
+  color: #222;
+  font-size: 16px;
+}
+
+h1 {
+	font-size: 2.75em;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.625em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+h6 {
+	font-size: 1.125em;
+}
+
+p {
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, button, a, label{
+	@apply font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply leading-tight;
+}
+
+h1, h2, h3 {
+  @apply font-bold;
+}
+
+@media screen and (max-width: 767px){
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.875em;
+	}
+
+	h3 {
+		font-size: 1.75em;
+	}
+
+	h4 {
+		font-size: 1.5em;
+	}
+
+	h5 {
+		font-size: 1.375em;
+	}
+}
+
+img {
+	@apply w-full h-auto;
+}
+
+
+.has-tooltip {
+	@apply relative;
+	.tooltip {
+		@apply bg-black bg-opacity-70 rounded text-sm px-2 py-1 ml-2 -z-1 absolute top-0 left-full opacity-0 transition-all duration-200 ease-in-out;
+	}
+	&:hover .tooltip {
+		@apply opacity-100 z-5;
+	}
+}
+
+
+.container {
+	width: 95%;
+	margin: 45px auto;
+}
+
+.content {
+	width: 80%;
+	@apply h-screen flex flex-col overflow-y-scroll transition-all duration-500 ease-in-out;
+}
+
+.ratings {
+	@apply grid grid-cols-1 gap-3;
+}
+.rate {
+	@apply flex items-center justify-between w-auto p-5 text-white bg-gradient-to-r rounded-md shadow-md;
+	.rate-img {
+		@apply w-14 h-14;
+	}
+}
+
+@screen lg {
+	.ratings {
+		@apply grid-cols-3;
+	}
+}
+
+@screen max-md {
+	.content {
+		@apply w-full;
+	}
+}

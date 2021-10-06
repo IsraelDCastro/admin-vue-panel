@@ -1,0 +1,82 @@
+.btn {
+  @apply inline-block text-white font-semibold px-4 py-2 rounded transition-all duration-400 ease-in-out;
+  &.btn-primary {
+    @apply bg-primary-500 hover:bg-primary-700;
+  }
+  &.btn-secondary {
+    @apply bg-secondary-100;
+    &:hover { @apply bg-secondary-200; }
+  }
+  &.btn-outline-white {
+    @apply border border-white text-white;
+    &:hover {
+      @apply bg-white text-gray-800;
+    }
+  }
+  &.is-small {
+    @apply py-1 px-2 text-sm;
+  }
+}
+
+.link {
+  @apply text-primary-500 inline-block font-normal transition-all duration-500 ease-in-out cursor-pointer;
+
+  &:hover,
+  &:focus {
+    @apply text-primary-700;
+  }
+  &.danger {
+    @apply text-red-500;
+    &:hover {
+      @apply text-red-600;
+    }
+  }
+  &.suspend {
+    @apply text-gray-500;
+    &:hover {
+      @apply text-gray-600;
+    }
+  }
+  &.white {
+    @apply text-white;
+    &:hover {
+      @apply text-secondary-100;
+    }
+  }
+}
+
+.dropdown {
+  @apply relative cursor-pointer;
+  .dropdown-content {
+    z-index: -1;
+    @apply bg-white w-40 overflow-hidden absolute left-0 bottom-auto mt-1 rounded-md shadow-xl opacity-0 transition-all duration-500 ease-in-out list-none;
+    .dropdown-item {
+      @apply block px-4 py-2 cursor-pointer transition-all duration-500 ease-in-out;
+      &:hover {
+        @apply bg-primary-500 text-white;
+      }
+    }
+    .dropdown-divider {
+      @apply my-2 mx-6 border-t-2 border-gray-400;
+    }
+  }
+  .dropdown-icon {
+    @apply transform rotate-0 transition-all duration-300 ease-linear;
+  }
+  &.is-hovered:hover {
+    .dropdown-content {
+      @apply opacity-100 z-10;
+    }
+    .dropdown-icon {
+      @apply rotate-180;
+    }
+  }
+  &.has-large-text {
+    .dropdown-content {
+      @apply w-auto;
+      .dropdown-item {
+        @apply whitespace-nowrap;
+      }
+    }
+  }
+}
