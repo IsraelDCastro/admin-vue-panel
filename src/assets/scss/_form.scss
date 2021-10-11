@@ -1,6 +1,50 @@
 .form {
+  @apply  p-8;
   &.form-shadow {
-    @apply bg-white p-8 shadow-3xl rounded-md;
+    @apply bg-white shadow-3xl rounded-md;
+  }
+  
+  
+}
+
+.field {
+  .label {
+    @apply block font-semibold text-lg mb-2;
+  }
+  .input, .select-inner {
+    @apply w-full h-10 px-3 py-2 bg-gray-50 border-2 border-gray-200 rounded outline-none focus:border-primary-300 transition-all duration-400 ease-in-out;
+  }
+  &.is-checkbox {
+    .checkbox {
+      @apply align-middle;
+    }
+    .label {
+      @apply ml-3 mb-0 cursor-pointer inline-block text-base align-middle;
+    }
+  }
+  .radio-group {
+    @apply flex flex-wrap items-center;
+    > .main-label { @apply flex-full block font-semibold text-lg mb-2; }
+    .radio {
+      &:not(:last-child) { @apply mr-3; }
+      .label {
+        @apply mb-0 cursor-pointer inline-block text-base align-middle;
+        &::before {
+          content: "";
+          @apply inline-block w-4 h-4 mt-1 mr-2 border-2 bg-gray-200 rounded-full shadow transition-all duration-300 ease-in-out;
+          
+        }
+        &.is-active::before {
+          @apply border-white border-4 bg-primary-500;
+        }
+      }
+    }
+  }
+  .input-file {
+    @apply w-full cursor-pointer bg-gray-200 border border-gray-300 mb-3 outline-none p-2 rounded shadow-sm  transition-all duration-400 ease-in-out;
+    &:hover {
+      @apply bg-primary-500 text-white;
+    }
   }
   &.is-double {
     @apply flex flex-wrap justify-between items-start;
@@ -10,50 +54,54 @@
       @apply mb-4;
     }
   }
-  .field {
-    .label {
-      @apply block font-semibold text-lg mb-2;
-    }
-    .input, .select-inner {
-      @apply w-full h-10 px-3 py-2 bg-gray-50 border-2 border-gray-200 rounded outline-none focus:border-primary-300 transition-all duration-400 ease-in-out;
-    }
-    &.is-checkbox {
-      .checkbox {
-        @apply align-middle;
+  &.is-button {
+    @apply mt-4 text-right flex-full;
+  }
+  &:not(:last-child) {
+    @apply mb-4;
+  }
+}
+
+.sign-in {
+  @apply h-full bg-primary-200 p-8 bg-opacity-5 flex items-center justify-center;
+  .sign-wrap {
+    @apply w-full rounded-md shadow-2xl overflow-hidden flex justify-center;
+    .sign-image-wrap {
+      @apply relative w-1/2;
+      .signin-img,
+      .signup-img {
+        @apply absolute inset-0 h-full z-1 rounded-tr-md rounded-br-md bg-gradient-to-tr from-primary-500 to-primary-700 bg-cover bg-center bg-no-repeat;
       }
-      .label {
-        @apply ml-3 mb-0 cursor-pointer inline-block text-base align-middle;
+      .signin-img {
+        background-image: url("/images/image-sign-in-back.jpeg");
       }
-    }
-    .radio-group {
-      @apply flex flex-wrap items-center;
-      > .main-label { @apply flex-full block font-semibold text-lg mb-2; }
-      .radio {
-        &:not(:last-child) { @apply mr-3; }
-        .label {
-          @apply mb-0 cursor-pointer inline-block text-base align-middle;
-          &::before {
-            content: "";
-            @apply inline-block w-4 h-4 mt-1 mr-2 border-2 bg-gray-200 rounded-full shadow transition-all duration-300 ease-in-out;
-            
-          }
-          &.is-active::before {
-            @apply border-white border-4 bg-primary-500;
-          }
-        }
+      .signup-img {
+        background-image: url("/images/image-register-back.jpeg");
       }
     }
-    .input-file {
-      @apply w-full cursor-pointer bg-gray-200 border border-gray-300 mb-3 outline-none p-2 rounded shadow-sm  transition-all duration-400 ease-in-out;
-      &:hover {
-        @apply bg-primary-500 text-white;
-      }
+    .form-wrap {
+      @apply  w-1/2 bg-white p-8;
     }
-    &.is-button {
-      @apply mt-4 text-right flex-full;
+    .form {
+      @apply flex flex-col justify-center;
     }
-    &:not(:last-child) {
-      @apply mb-4;
+  }
+}
+
+.other-options {
+  @apply flex flex-wrap;
+  ul {
+    @apply flex flex-wrap ml-auto space-x-2;
+    a {
+      @apply flex items-center justify-center p-2 text-white rounded h-9 w-9 transition-all duration-400 ease-in-out;
+    }
+  }
+}
+
+@screen md {
+  .sign-in {
+    .sign-wrap {
+      @apply w-8/12;
     }
   }
 }

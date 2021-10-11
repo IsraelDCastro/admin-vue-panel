@@ -23,6 +23,7 @@
     "@vue/compiler-sfc": "^3.2.19",
     "path": "^0.12.7",
     "vite": "^2.6.3",
+    "vite-svg-loader": "^2.2.0",
     "yarn-upgrade-all": "^0.5.4"
   }
 }

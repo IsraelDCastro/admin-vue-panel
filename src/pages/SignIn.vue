@@ -7,7 +7,7 @@
         <div class="signin-img"></div>
       </div>
       <div class="form-wrap">
-        <div class="form">
+        <div>
           <h2 class="mb-8 text-center">Sign In</h2>
           <div class="field">
             <label class="label">Email</label>
@@ -25,8 +25,30 @@
             <button class="w-full btn btn-primary">Sign in</button>
           </div>
         </div>
-        <hr class="my-8">
+        <hr class="my-8" />
+        <router-link to="/register" class="mb-1 link info">Create an account</router-link>
+        <div class="other-options">
+          <h5>Sign in with:</h5>
+          <ul>
+            <li>
+              <a href="#" class="bg-white border border-blue-300 hover:bg-blue-300/20"><img :src="Google" alt=""></a>
+            </li>
+            <li>
+              <a href="#" class="bg-twitter/80 hover:bg-twitter"><Twitter /></a>
+            </li>
+            <li>
+              <a href="#" class="bg-facebook/80 hover:bg-facebook"><Facebook /></a>
+            </li>
+          </ul>
+          
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+  import Facebook from "@/components/icons/Facebook.vue";
+  import Twitter from "@/components/icons/Twitter.vue";
+  import Google from "@/assets/images/google.png"
+</script>

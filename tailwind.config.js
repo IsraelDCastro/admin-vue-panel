@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'twitter': '#00acee',
+        'facebook': '#3b5998',
         'primary': {
           50: "",
           100: "#F7FAFC",
