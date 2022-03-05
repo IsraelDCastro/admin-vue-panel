@@ -19,7 +19,9 @@
         <li class="dropdown-item">Profile</li>
         <li class="dropdown-item">Settings</li>
         <hr class="dropdown-divider" />
-        <li class="dropdown-item">Log out</li>
+        <li class="dropdown-item">
+          <a href="#" @click="SetFakeLogin">Log out</a>
+        </li>
       </ul>
     </div>
     <!-- <span class={ openSidebar ? "open-sidebar is-active" : "open-sidebar"}> -->
@@ -33,4 +35,11 @@
 
 <script setup>
   import { ChevronDownIcon, SearchIcon } from '@heroicons/vue/solid';
+  import { useRouter } from 'vue-router';
+  const router = useRouter();
+
+  async function SetFakeLogin () {
+    await localStorage.setItem("FakeLoginAdminPanel", false);
+    router.push('/')
+  }
 </script>

@@ -22,7 +22,7 @@
             <label for="remind" class="label">Remind me</label>
           </div>
           <div class="field is-button">
-            <button class="w-full btn btn-primary">Sign in</button>
+            <router-link to="/dashboard" class="w-full btn btn-primary" @click="SetFakeLogin">Sign in</router-link>
           </div>
         </div>
         <hr class="my-8" />
@@ -50,5 +50,5 @@
 <script setup>
   import Facebook from "@/components/icons/Facebook.vue";
   import Twitter from "@/components/icons/Twitter.vue";
-  import Google from "@/assets/images/google.png"
+  import Google from "@/assets/images/google.png";
 </script>

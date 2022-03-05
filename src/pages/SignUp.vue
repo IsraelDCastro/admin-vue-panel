@@ -26,7 +26,7 @@
             <input type="password" class="input" placeholder="Confirm password" />
           </div>
           <div class="field is-button">
-            <button class="w-full btn btn-secondary">Sign in</button>
+            <router-link to="/dashboard" class="w-full btn btn-secondary">Sign up</router-link>
           </div>
         </div>
         <hr class="my-8" />

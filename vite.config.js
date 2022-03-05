@@ -9,6 +9,9 @@ export default defineConfig({
     vue(),
     svgLoader()
   ],
+	server: {
+		open: true
+	},
   resolve: {
     alias: [
       {
